@@ -1,0 +1,19 @@
+{
+	"custom": {
+		"todo-list": {
+			"border": {
+				"color": "var(--wp--preset--color--foreground)",
+				"radius": "100%",
+				"width": "1px"
+			},
+			"color": {
+				"text": "#B4473C"
+			},
+			"typography": {
+				"fontSize": "17px",
+				"fontFamily": "monospace",
+				"lineHeight": "1.8"
+			}
+		}
+	}
+}

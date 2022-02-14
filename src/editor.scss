@@ -1,0 +1,97 @@
+.wp-block-tabor-todo-list {
+
+	//Set block defaults.
+	--wp--default--todo-list--typography--font-size: 16px;
+	--wp--default--todo-list--typography--line-height: 1.8;
+	--wp--default--todo-list--border--color: #bfbfbf;
+	--wp--default--todo-list--color--text: #B4473C;
+	--wp--default--todo-list--typography--font-family: monospace;
+	--wp--default--todo-list--border--radius: 100%;
+	--wp--default--todo-list--border--width: 1px;
+
+	// Set variables.
+	--fontSize: var(--wp--custom--todo-list--typography--font-size, var(--wp--default--todo-list--typography--font-size));
+	--fontFamily: var(--wp--custom--todo-list--typography--font-family, var(--wp--default--todo-list--typography--font-family));
+	--lineHeight: var(--wp--custom--todo-list--typography--line-height, var(--wp--default--todo-list--typography--line-height));
+	--color: var(--wp--custom--todo-list--color--text, var(--wp--default--todo-list--color--text));
+	--borderColor: var(--wp--custom--todo-list--border--color, var(--wp--default--todo-list--border--color));
+	--borderWidth: var(--wp--custom--todo-list--border--width, var(--wp--default--todo-list--border--width));
+	--borderRadius: var(--wp--custom--todo-list--border--radius, var(--wp--default--todo-list--border--radius));
+
+	// Override admin color in this block only.
+	--wp-admin-theme-color: var(--color);
+}
+
+.wp-block-tabor-todo-list {
+	color: var(--color);
+}
+
+.wp-block-tabor-todo-item {
+	align-items: center;
+	display: flex;
+	width: 100%;
+	margin-bottom: 3px !important;
+	margin-top: 3px !important;
+
+	&.is-checked .block-editor-rich-text__editable {
+		text-decoration: line-through;
+	}
+
+	&:after {
+		display: none;
+	}
+
+	.block-editor-rich-text__editable {
+		margin-bottom: 0;
+		margin-top: 0;
+		width: 100%;
+		font-family: var(--fontFamily);
+		font-size: var(--fontSize);
+		line-height:var(--lineHeight);
+	}
+
+	.components-base-control__field {
+		margin-bottom: 0;
+	}
+
+	.components-checkbox-control__input-container {
+		margin-right: 15px;
+	}
+
+	.components-checkbox-control__input[type=checkbox] {
+		background: var(--wp--preset--color--background, #fff);
+		border-color: var(--borderColor);
+		border-width: var(--borderWidth);
+		border-radius: var(--borderRadius);
+		margin-top: 0;
+
+		&:focus {
+			box-shadow: 0 0 0 2px var(--wp--preset--color--background, #fff),0 0 0 4px var(--wp-admin-theme-color);
+		}
+
+		&:checked {
+			background: var(--wp--preset--color--background, #fff);
+			border-color: var(--color);
+
+			&:after {
+				background: var(--color);
+				height: 50%;
+				width: 50%;
+				display: block;
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				border-radius: var(--borderRadius);
+				top: 25%;
+				left: 25%;	
+			}
+		}
+	}
+
+	// Hide the default checkmark icon
+	svg.components-checkbox-control__checked {
+		display: none;
+	}
+}
+

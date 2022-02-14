@@ -1,0 +1,27 @@
+{
+	"apiVersion": 2,
+	"name": "tabor/todo-item",
+	"title": "Todo Item",
+	"description": "An individual todo list item.",
+	"parent": [ "tabor/todo-list" ],
+	"textdomain": "todo-list-block",
+        "attributes": {
+                "content": {
+			"type": "string",
+			"selector": "p",
+			"__experimentalRole": "content"
+		},
+		"checked": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+        "supports": {
+		"html": false,
+		"className": false,
+		"reusable": false,
+		"inserter": false
+	},
+		"editorScript": "",
+		"editorStyle": ""
+}
