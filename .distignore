@@ -5,8 +5,7 @@
 /bin
 /dist
 /node_modules
-/src/*.js
-/src/*.scss
+/src
 /utils
 
 # Files
@@ -36,3 +35,4 @@ package-lock.json
 package.json
 phpcs.xml.dist
 webpack.config.js
+README.md
