@@ -8,7 +8,6 @@ import {
 	InnerBlocks,
 } from '@wordpress/block-editor';
 import {
-	ToolbarGroup,
 	ToolbarButton,
 	SVG,
 	Path,
@@ -69,43 +68,41 @@ function TodoBlock( { updateBlockAttributes, innerBlocks } ) {
 	return (
 		<>
 			<BlockControls group="other">
-				<ToolbarGroup>
-					<ToolbarButton
-						icon={
-							isAllChecked ? (
-								<SVG fill="none" viewBox="0 0 24 24">
-									<G fill="currentColor">
-										<Path
-											clipRule="evenodd"
-											d="m12 21c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-4.97056 0-9 4.02944-9 9 0 4.9706 4.02944 9 9 9zm-.0001-1.6249c4.0732 0 7.3751-3.3019 7.3751-7.375 0-4.07316-3.3019-7.37508-7.3751-7.37508-4.07308 0-7.375 3.30192-7.375 7.37508 0 4.0731 3.30192 7.375 7.375 7.375z"
-											fillRule="evenodd"
-										/>
-										<Path d="m16.5 12c0 2.4853-2.0147 4.5-4.5 4.5-2.48528 0-4.5-2.0147-4.5-4.5 0-2.48528 2.01472-4.5 4.5-4.5 2.4853 0 4.5 2.01472 4.5 4.5z" />
-									</G>
-								</SVG>
-							) : (
-								<SVG fill="none" viewBox="0 0 24 24">
+				<ToolbarButton
+					icon={
+						isAllChecked ? (
+							<SVG fill="none" viewBox="0 0 24 24">
+								<G fill="currentColor">
 									<Path
 										clipRule="evenodd"
 										d="m12 21c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-4.97056 0-9 4.02944-9 9 0 4.9706 4.02944 9 9 9zm-.0001-1.6249c4.0732 0 7.3751-3.3019 7.3751-7.375 0-4.07316-3.3019-7.37508-7.3751-7.37508-4.07308 0-7.375 3.30192-7.375 7.37508 0 4.0731 3.30192 7.375 7.375 7.375z"
-										fill="currentColor"
 										fillRule="evenodd"
 									/>
-								</SVG>
-							)
-						}
-						label={
-							isAllChecked
-								? __( 'Mark All Complete', 'todo-list-block' )
-								: __( 'Mark All Incomplete', 'todo-list-block' )
-						}
-						onClick={ onClickInnerBlocks }
-					>
-						{ isAllChecked
+									<Path d="m16.5 12c0 2.4853-2.0147 4.5-4.5 4.5-2.48528 0-4.5-2.0147-4.5-4.5 0-2.48528 2.01472-4.5 4.5-4.5 2.4853 0 4.5 2.01472 4.5 4.5z" />
+								</G>
+							</SVG>
+						) : (
+							<SVG fill="none" viewBox="0 0 24 24">
+								<Path
+									clipRule="evenodd"
+									d="m12 21c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-4.97056 0-9 4.02944-9 9 0 4.9706 4.02944 9 9 9zm-.0001-1.6249c4.0732 0 7.3751-3.3019 7.3751-7.375 0-4.07316-3.3019-7.37508-7.3751-7.37508-4.07308 0-7.375 3.30192-7.375 7.37508 0 4.0731 3.30192 7.375 7.375 7.375z"
+									fill="currentColor"
+									fillRule="evenodd"
+								/>
+							</SVG>
+						)
+					}
+					label={
+						isAllChecked
 							? __( 'Mark All Complete', 'todo-list-block' )
-							: __( 'Mark All Incomplete', 'todo-list-block' ) }
-					</ToolbarButton>
-				</ToolbarGroup>
+							: __( 'Mark All Incomplete', 'todo-list-block' )
+					}
+					onClick={ onClickInnerBlocks }
+				>
+					{ isAllChecked
+						? __( 'Mark All Complete', 'todo-list-block' )
+						: __( 'Mark All Incomplete', 'todo-list-block' ) }
+				</ToolbarButton>
 			</BlockControls>
 			<p { ...useBlockProps() }>
 				<InnerBlocks
