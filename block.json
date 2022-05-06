@@ -12,7 +12,10 @@
 		"__experimentalSelector": "p",
 		"__unstablePasteTextInline": true,
 		"color": {
-			"background": false
+			"background": false,
+			"__experimentalDefaultControls": {
+				"text": true
+			}
 		}
 	},
 	"editorScript": "file:./build/index.js",
