@@ -1,6 +1,6 @@
 {
 	"name": "todo-list-block",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Add todo lists to posts that render only within the block editor.",
 	"author": {
 		"name": "richtabor",
