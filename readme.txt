@@ -2,7 +2,7 @@
 Contributors:      richtabor
 Tags:              gutenberg, block, blocks, markdown, todo
 Tested up to:      6.6
-Stable tag:        0.1.5
+Stable tag:        1.0.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,7 +41,7 @@ As a WordPress entrepreneur, designer and developer all wrapped up in one, [@ric
 
 == Changelog ==
 
-= 0.1.5 =
+= 1.0.0 =
 * Set default control for text color
 
 = 0.1.4 =
