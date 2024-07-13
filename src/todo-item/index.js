@@ -21,7 +21,7 @@ import metadata from './block.json';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( 'tabor/todo-item', {
+registerBlockType( metadata.name, {
 	...metadata,
 	icon: (
 		<SVG fill="none" viewBox="0 0 24 24">

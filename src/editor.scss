@@ -1,25 +1,6 @@
 .wp-block-tabor-todo-list {
-
-	//Set block defaults.
-	--wp--default--todo-list--typography--font-size: 16px;
-	--wp--default--todo-list--typography--line-height: 1.8;
-	--wp--default--todo-list--border--color: #bfbfbf;
-	--wp--default--todo-list--color--text: #B4473C;
-	--wp--default--todo-list--typography--font-family: monospace;
-	--wp--default--todo-list--border--radius: 100%;
-	--wp--default--todo-list--border--width: 1px;
-
-	// Set variables.
-	--fontSize: var(--wp--custom--todo-list--typography--font-size, var(--wp--default--todo-list--typography--font-size));
-	--fontFamily: var(--wp--custom--todo-list--typography--font-family, var(--wp--default--todo-list--typography--font-family));
-	--lineHeight: var(--wp--custom--todo-list--typography--line-height, var(--wp--default--todo-list--typography--line-height));
-	--color: var(--wp--custom--todo-list--color--text, var(--wp--default--todo-list--color--text));
-	--borderColor: var(--wp--custom--todo-list--border--color, var(--wp--default--todo-list--border--color));
-	--borderWidth: var(--wp--custom--todo-list--border--width, var(--wp--default--todo-list--border--width));
-	--borderRadius: var(--wp--custom--todo-list--border--radius, var(--wp--default--todo-list--border--radius));
-
-	// Override admin color in this block only.
-	--wp-admin-theme-color: var(--color);
+	--color: #B4473C;
+	--borderColor: #bfbfbf;
 }
 
 .wp-block-tabor-todo-list {
@@ -45,46 +26,49 @@
 		margin-bottom: 0;
 		margin-top: 0;
 		width: 100%;
-		font-family: var(--fontFamily);
-		font-size: var(--fontSize);
-		line-height:var(--lineHeight);
+		font-family: monospace;
 	}
 
 	.components-base-control__field {
 		margin-bottom: 0;
 	}
 
-	.components-checkbox-control__input-container {
-		margin-right: 15px;
-	}
-
 	.components-checkbox-control__input[type=checkbox] {
-		background: var(--wp--preset--color--background, #fff);
-		border-color: var(--borderColor);
-		border-width: var(--borderWidth);
-		border-radius: var(--borderRadius);
-		margin-top: 0;
+		background: transparent;
+		border-color: color-mix(in srgb, currentColor 60%, white 40%);
+		border-width: 1px;
+		border-radius: 100%;
+		height: 20px;
+		width: 20px;
 
 		&:focus {
-			box-shadow: 0 0 0 2px var(--wp--preset--color--background, #fff),0 0 0 4px var(--wp-admin-theme-color);
+			box-shadow: none;
+		}
+
+		&:focus-visible {
+			box-shadow: none;
+			outline: var(--color);
+			outline-offset: 3px;
+			outline-width: 1px;
+			outline-style: auto;
 		}
 
 		&:checked {
-			background: var(--wp--preset--color--background, #fff);
+			background: color-mix(in srgb, currentColor 10%, white 90%);
 			border-color: var(--color);
 
 			&:after {
 				background: var(--color);
-				height: 50%;
-				width: 50%;
+				height: 10px;
+				width: 10px;
 				display: block;
 				content: "";
 				position: absolute;
 				bottom: 0;
 				right: 0;
-				border-radius: var(--borderRadius);
+				border-radius: 100%;
 				top: 25%;
-				left: 25%;	
+				left: 25%;
 			}
 		}
 	}

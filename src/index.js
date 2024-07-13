@@ -14,7 +14,7 @@ import { SVG, Path, G } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import metadata from '../block.json';
+import metadata from './block.json';
 import edit from './edit';
 import save from './save';
 import transforms from './transforms';
@@ -29,7 +29,7 @@ import './todo-item';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( 'tabor/todo-list', {
+registerBlockType( metadata.name, {
 	...metadata,
 	icon: (
 		<SVG fill="none" viewBox="0 0 24 24">

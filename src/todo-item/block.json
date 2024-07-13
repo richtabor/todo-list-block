@@ -1,12 +1,12 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "tabor/todo-item",
 	"title": "Todo Item",
 	"description": "An individual todo list item.",
 	"parent": [ "tabor/todo-list" ],
 	"textdomain": "todo-list-block",
         "attributes": {
-                "content": {
+            "content": {
 			"type": "string",
 			"selector": "p",
 			"__experimentalRole": "content"
@@ -16,12 +16,10 @@
 			"default": false
 		}
 	},
-        "supports": {
+    "supports": {
 		"html": false,
 		"className": false,
 		"reusable": false,
 		"inserter": false
-	},
-		"editorScript": "",
-		"editorStyle": ""
+	}
 }
