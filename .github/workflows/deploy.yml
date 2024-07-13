@@ -10,13 +10,14 @@ jobs:
             - name: Install dependencies
               run: npm install
 
-            - name: Build
-              run: NO_CHECKS=true npm run build
+            - name: Build plugin zip
+              run: npm run plugin-zip
 
             - name: Deploy to WordPress.org
               uses: 10up/action-wordpress-plugin-deploy@stable
               with:
                   generate-zip: true
+                  dry-run: true
               env:
                   SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
                   SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
