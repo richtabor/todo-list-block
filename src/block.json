@@ -5,8 +5,8 @@
 	"title": "Todo List",
 	"category": "text",
 	"description": "Add a todo list that does not render on the front-end.",
-    "keywords": [ "todo", "list", "markdown", "tabor" ],
-    "supports": {
+	"keywords": [ "todo", "list", "markdown", "tabor" ],
+	"supports": {
 		"html": false,
 		"className": false,
 		"customClassName": false,

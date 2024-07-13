@@ -12,12 +12,7 @@ import {
 	BlockControls,
 	useInnerBlocksProps,
 } from '@wordpress/block-editor';
-import {
-	ToolbarButton,
-	SVG,
-	Path,
-	G,
-} from '@wordpress/components';
+import { ToolbarButton, SVG, Path, G } from '@wordpress/components';
 import { compose } from '@wordpress/compose';
 import { withSelect, withDispatch } from '@wordpress/data';
 import { useState } from '@wordpress/element';
