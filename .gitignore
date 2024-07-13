@@ -13,6 +13,7 @@ coverage
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/
+todo-list-block/
 
 # Dependency directories
 node_modules/
