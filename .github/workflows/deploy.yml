@@ -1,7 +1,10 @@
-name: Deploy to WordPress.org
+name: Create Release
+
 on:
-  release:
-    types: [released]
+    push:
+        tags:
+            - '*'
+
 jobs:
     deploy:
         runs-on: ubuntu-latest
