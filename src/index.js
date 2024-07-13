@@ -67,6 +67,13 @@ registerBlockType( metadata.name, {
 					checked: false,
 				},
 			},
+			{
+				name: 'tabor/todo-item',
+				attributes: {
+					content: __( 'Subscribe to Shaping WordPress' ),
+					checked: false,
+				},
+			},
 		],
 	},
 	transforms,

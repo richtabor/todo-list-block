@@ -5,8 +5,8 @@
 	"description": "An individual todo list item.",
 	"parent": [ "tabor/todo-list" ],
 	"textdomain": "todo-list-block",
-        "attributes": {
-            "content": {
+    "attributes": {
+        "content": {
 			"type": "string",
 			"selector": "p",
 			"__experimentalRole": "content"
@@ -19,6 +19,7 @@
     "supports": {
 		"html": false,
 		"className": false,
+		"customClassName": false,
 		"reusable": false,
 		"inserter": false
 	}

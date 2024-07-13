@@ -9,7 +9,7 @@
     "supports": {
 		"html": false,
 		"className": false,
-		"__experimentalSelector": "p",
+		"customClassName": false,
 		"color": {
 			"background": false,
 			"link": false,
