@@ -2,11 +2,8 @@
 /.git
 /.github
 /.wordpress-org
-/bin
-/dist
 /node_modules
 /src
-/utils
 
 # Files
 *.log
