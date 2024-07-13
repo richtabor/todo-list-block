@@ -15,15 +15,12 @@ import { createBlock } from '@wordpress/blocks';
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  */
 function TodoItemBlock( {
 	attributes,
 	mergeBlocks,
 	onReplace,
-	insertBlocksAfter,
 	setAttributes,
 	clientId,
 } ) {
@@ -44,13 +41,15 @@ function TodoItemBlock( {
 	return (
 		<>
 			<div { ...blockProps }>
-				<CheckboxControl
-					checked={ !! checked }
-					onChange={ onChange( 'checked' ) }
-				/>
+				<div tabIndex={ 0 }>
+					<CheckboxControl
+						checked={ !! checked }
+						onChange={ onChange( 'checked' ) }
+					/>
+				</div>
 				<RichText
 					identifier="content"
-					tagName="p"
+					tagName="span"
 					value={ content }
 					multiline={ false }
 					onChange={ onChange( 'content' ) }
@@ -79,17 +78,13 @@ function TodoItemBlock( {
 						content
 							? __( 'Todo list block', 'todo-list-block' )
 							: __(
-									'Empty block; start writing to add a todo list item',
+									'Empty block; start writing to add a todo',
 									'todo-list-block'
 							  )
 					}
 					data-empty={ content ? false : true }
-					placeholder={ __( 'Add todo item', 'todo-list-block' ) }
+					placeholder={ __( 'Add todo', 'todo-list-block' ) }
 					allowedFormats={ [] }
-					__unstableAllowPrefixTransformations
-					__unstableOnSplitAtEnd={ () =>
-						insertBlocksAfter( createBlock( 'core/paragraph' ) )
-					}
 				/>
 			</div>
 		</>

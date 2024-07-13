@@ -1,18 +1,18 @@
 /**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
+/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
 	BlockControls,
-	InnerBlocks,
+	useInnerBlocksProps,
 } from '@wordpress/block-editor';
-import {
-	ToolbarButton,
-	SVG,
-	Path,
-	G,
-} from '@wordpress/components';
+import { ToolbarButton, SVG, Path, G } from '@wordpress/components';
 import { compose } from '@wordpress/compose';
 import { withSelect, withDispatch } from '@wordpress/data';
 import { useState } from '@wordpress/element';
@@ -28,8 +28,20 @@ import './editor.scss';
 /**
  * Block constants.
  */
-const ALLOWED_BLOCKS = [ 'tabor/todo-item' ];
-const TEMPLATE = [ [ 'tabor/todo-item', {} ] ];
+const DEFAULT_BLOCK = {
+	name: 'tabor/todo-item',
+	attributesToCopy: [
+		'backgroundColor',
+		'border',
+		'className',
+		'fontFamily',
+		'fontSize',
+		'gradient',
+		'style',
+		'textColor',
+		'width',
+	],
+};
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -39,8 +51,21 @@ const TEMPLATE = [ [ 'tabor/todo-item', {} ] ];
  *
  * @return {WPElement} Element to render.
  */
-function TodoBlock( { updateBlockAttributes, innerBlocks } ) {
+function TodoBlock( { updateBlockAttributes, innerBlocks, className } ) {
 	const [ isAllChecked, setAllChecked ] = useState( true );
+
+	const blockProps = useBlockProps( {
+		className: classnames( className ),
+	} );
+
+	const innerBlocksProps = useInnerBlocksProps( blockProps, {
+		defaultBlock: DEFAULT_BLOCK,
+		directInsert: true,
+		template: [ [ 'tabor/todo-item' ] ],
+		templateInsertUpdatesSelection: true,
+		__experimentalCaptureToolbars: true,
+		orientation: 'vertical',
+	} );
 
 	function updateInnerAttributes( blockName, newAttributes ) {
 		innerBlocks.forEach( ( item ) => {
@@ -94,25 +119,17 @@ function TodoBlock( { updateBlockAttributes, innerBlocks } ) {
 					}
 					label={
 						isAllChecked
-							? __( 'Mark All Complete', 'todo-list-block' )
-							: __( 'Mark All Incomplete', 'todo-list-block' )
+							? __( 'Mark all complete', 'todo-list-block' )
+							: __( 'Mark all incomplete', 'todo-list-block' )
 					}
 					onClick={ onClickInnerBlocks }
 				>
 					{ isAllChecked
-						? __( 'Mark All Complete', 'todo-list-block' )
-						: __( 'Mark All Incomplete', 'todo-list-block' ) }
+						? __( 'Mark all complete', 'todo-list-block' )
+						: __( 'Mark all incomplete', 'todo-list-block' ) }
 				</ToolbarButton>
 			</BlockControls>
-			<p { ...useBlockProps() }>
-				<InnerBlocks
-					allowedBlocks={ ALLOWED_BLOCKS }
-					template={ TEMPLATE }
-					orientation="vertical"
-					templateInsertUpdatesSelection={ false }
-					__experimentalCaptureToolbars={ true }
-				/>
-			</p>
+			<div { ...innerBlocksProps } />
 		</>
 	);
 }

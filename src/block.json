@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tabor/todo-list",
+	"title": "Todo List",
+	"category": "text",
+	"description": "Add a todo list that does not render on the front-end.",
+	"keywords": [ "todo", "list", "markdown", "tabor" ],
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"color": {
+			"background": false,
+			"link": false,
+			"text": true
+		}
+	},
+	"textdomain": "todo-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}
