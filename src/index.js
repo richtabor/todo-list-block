@@ -57,27 +57,13 @@ registerBlockType( metadata.name, {
 				name: 'tabor/todo-item',
 				attributes: {
 					content: __( 'Add supporting media' ),
-					checked: false,
+					checked: true,
 				},
 			},
 			{
 				name: 'tabor/todo-item',
 				attributes: {
 					content: __( 'Add social images' ),
-					checked: false,
-				},
-			},
-			{
-				name: 'tabor/todo-item',
-				attributes: {
-					content: __( 'Ensure all images have alt text' ),
-					checked: false,
-				},
-			},
-			{
-				name: 'tabor/todo-item',
-				attributes: {
-					content: __( 'Add links to relevant internal pages' ),
 					checked: false,
 				},
 			},

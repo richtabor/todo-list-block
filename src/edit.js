@@ -66,12 +66,7 @@ function TodoBlock( { updateBlockAttributes, innerBlocks, className } ) {
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {
 		defaultBlock: DEFAULT_BLOCK,
 		directInsert: true,
-		template: [
-			[
-				'tabor/todo-item',
-			]
-		],
-		allowedBlocks: [ 'tabor/todo-item' ],
+		template: [ [ 'tabor/todo-item' ] ],
 		templateInsertUpdatesSelection: true,
 		__experimentalCaptureToolbars: true,
 		orientation: 'vertical',

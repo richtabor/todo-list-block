@@ -5,17 +5,18 @@
 	"title": "Todo List",
 	"category": "text",
 	"description": "Add a todo list that does not render on the front-end.",
-    "keywords": [ "todo", "list", "markdown", "tabor"],
-	"textdomain": "todo-block",
+    "keywords": [ "todo", "list", "markdown", "tabor" ],
     "supports": {
 		"html": false,
 		"className": false,
 		"__experimentalSelector": "p",
-		"__unstablePasteTextInline": true,
 		"color": {
-			"background": false
+			"background": false,
+			"link": false,
+			"text": true
 		}
 	},
+	"textdomain": "todo-block",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css"
 }

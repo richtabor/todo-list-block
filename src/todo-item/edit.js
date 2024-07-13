@@ -21,7 +21,6 @@ function TodoItemBlock( {
 	attributes,
 	mergeBlocks,
 	onReplace,
-	insertBlocksAfter,
 	setAttributes,
 	clientId,
 } ) {
@@ -42,13 +41,15 @@ function TodoItemBlock( {
 	return (
 		<>
 			<div { ...blockProps }>
-				<CheckboxControl
-					checked={ !! checked }
-					onChange={ onChange( 'checked' ) }
-				/>
+				<div tabIndex={ 0 }>
+					<CheckboxControl
+						checked={ !! checked }
+						onChange={ onChange( 'checked' ) }
+					/>
+				</div>
 				<RichText
 					identifier="content"
-					tagName="p"
+					tagName="span"
 					value={ content }
 					multiline={ false }
 					onChange={ onChange( 'content' ) }
