@@ -46,8 +46,8 @@ jobs:
       - name: Deploy to WordPress.org
         uses: 10up/action-wordpress-plugin-deploy@stable
         with:
-          generate-zip: false
-          dry-run: true
+          generate-zip: true
+          dry-run: false
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
