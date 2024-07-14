@@ -29,7 +29,7 @@ import './todo-item';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( metadata.name, {
+registerBlockType( 'tabor/todo-list', {
 	...metadata,
 	icon: (
 		<SVG fill="none" viewBox="0 0 24 24">
