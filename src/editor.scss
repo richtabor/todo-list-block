@@ -1,6 +1,8 @@
 .wp-block-tabor-todo-list {
 	// Abstract the color to be used throughout the block.
-	--color: color-mix(in srgb, currentColor 70%, white 30%);
+	--color: #B4473C;
+
+	color: var(--color);
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
@@ -8,7 +10,7 @@
 
 .wp-block-tabor-todo-item {
 	align-items: center;
-	color: var(--color);
+	color: currentColor;
 	display: flex;
 	gap: 8px;
 	width: 100%;
@@ -24,7 +26,7 @@
 
 	.components-checkbox-control__input[type=checkbox] {
 		background: transparent;
-		border-color: var(--color, currentColor);
+		border-color: var(--color);
 		border-radius: 100%;
 		border-width: 1px;
 		height: 20px;
