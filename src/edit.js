@@ -65,6 +65,7 @@ function TodoBlock( { updateBlockAttributes, innerBlocks, className } ) {
 		templateInsertUpdatesSelection: true,
 		__experimentalCaptureToolbars: true,
 		orientation: 'vertical',
+		allowedBlocks: [ 'tabor/todo-item' ],
 	} );
 
 	function updateInnerAttributes( blockName, newAttributes ) {
