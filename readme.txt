@@ -2,7 +2,7 @@
 Contributors:      richtabor
 Tags:              gutenberg, block, blocks, markdown, todo
 Tested up to:      6.6
-Stable tag:        1.0.0
+Stable tag:        1.0.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,8 +41,12 @@ As a WordPress entrepreneur, designer and developer all wrapped up in one, [@ric
 
 == Changelog ==
 
+= 1.0.1 =
+* Add back the default color.
+* Ensure only todo items can exist within the todo list block.
+
 = 1.0.0 =
-* Set default control for text color
+* Simplify block styles to lean on theme.
 
 = 0.1.4 =
 * Add block.json to registerBlockType

@@ -5,7 +5,7 @@
  * Plugin URI:        https://rich.blog/todo-list-block?utm_source=wp-plugins&utm_medium=todo-list-block&utm_campaign=plugin-uri
  * Requires at least: 5.7
  * Requires PHP:      7.0
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Rich Tabor
  * Author URI:        https://rich.blog/?utm_source=wp-plugins&utm_medium=todo-list-block&utm_campaign=author-uri
  * License:           GPL-2.0-or-later
